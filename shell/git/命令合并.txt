@@ -1,0 +1,5 @@
+把该命令 添加到git 命令中 后面可以直接使用  git cmp_origin_master  因为目前都是origin 和master  那就先这样用吧  后面记得可以把 origin 和master 这两个变成参数传入 
+git config --global alias.cmp '!f() { git add -A && git commit -m "$@" && git push origin master; }; f'
+ 
+这个其实可以用自带命令    git commit -am  来代替
+git config --global alias.cm '!f() { git add -A && git commit -m "$@"; }; f'
