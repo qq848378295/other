@@ -3,3 +3,22 @@ git config --global alias.cmp '!f() { git add -A && git commit -m "$@" && git pu
  
 这个其实可以用自带命令    git commit -am  来代替
 git config --global alias.cm '!f() { git add -A && git commit -m "$@"; }; f'
+
+
+
+其实也可以自己写一个通用脚本或者两个分别的脚本(sheel 和command) 来实现 
+思路   通过参数传入提交信息  然后提交  后面的origin master 可以搞个默认值  也可以传值  然后添加环境变量 
+echo $1
+git add .
+git commit -m "$1"
+git push  origin master
+
+通用的  无非是在前面加一个操作系统判断  然后分开调用不同的脚本(重点:最开始的判断脚本需要通用)
+
+
+
+添加环境变量  最简单的就是第一种
+1 将shell脚本扔到环境变量的路径中去 例如在linux下的/usr/bin  目录下
+2 把自己的某个目录添加到环境变量(参考jdk 环境变量设置)
+3 centos  链接命令：ln  （link） 没用过
+
