@@ -1,4 +1,6 @@
 shell 放自己的一些shell命令
+designpattern  设计模式
+data-structures 数据结构与算法
 trans-pro 为分布式事务 demo
   trans-pro1 注册用户
   trans-pro2 给用户增加积分
