@@ -14,9 +14,6 @@ public class T {
 	//
 	public static void main(String[] args) {
 		BigDecimal b=new BigDecimal(Integer.MAX_VALUE).pow(3).add(new BigDecimal(Long.MAX_VALUE).pow(3));
-		BigDecimal b1=new BigDecimal(Integer.MAX_VALUE).pow(3).subtract(new BigDecimal(Long.MAX_VALUE).pow(3));
-		
-		
 		System.out.println(b.add(new BigDecimal("42")));
 		System.out.println(b.subtract(new BigDecimal("42")));
 		System.out.println("xxxxxxxxx");
