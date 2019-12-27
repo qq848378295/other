@@ -16,7 +16,7 @@ import java.net.URL;
 public class HtmlUnitUtil {
     public static void main(String[] args) throws Exception {
 
-        //主页  http://a.mp.uc.cn/media.html?mid=84229754edf544798a3868966dcb6980&client=ucweb&uc_param_str=frdnsnpfvecpntnwprdsssnikt
+        //主页   http://a.mp.uc.cn/media.html?mid=84229754edf544798a3868966dcb6980&client=ucweb&uc_param_str=frdnsnpfvecpntnwprdsssnikt
 
         //通过主页 获取到小视频列表
         //  https://pages.uc.cn/?uc_wx_page_name=SubHomePage&uc_wx_used_dp=0&uc_biz_str=S:custom%7CC:full_screen&uc_wx_ver=0.18.0.0&uc_wx_downgrade=true#uc_wx_init_params=%7B%22weex%22:true,%22wmId%22:%2284229754edf544798a3868966dcb6980%22,%22subType%22:%22wm%22%7D
@@ -33,7 +33,7 @@ public class HtmlUnitUtil {
 //        System.out.println(doc.select("#videoPlay"));
         // 通过
     }
-    static WebClient getWc(){
+    public static WebClient getWc(){
         WebClient wc = new WebClient(BrowserVersion.BEST_SUPPORTED);
         wc.getOptions().setUseInsecureSSL(true);//是否使用不安全的SSL
         wc.getOptions().setJavaScriptEnabled(true);//启用JS解释器，默认为true
@@ -47,6 +47,21 @@ public class HtmlUnitUtil {
         wc.getOptions().setDoNotTrackEnabled(false);//不跟踪抓取
         return wc;
     }
+    public static WebClient getWc2(){
+        WebClient wc = new WebClient(BrowserVersion.CHROME);
+        wc.getOptions().setUseInsecureSSL(true);//是否使用不安全的SSL
+        wc.getOptions().setJavaScriptEnabled(true);//启用JS解释器，默认为true
+        wc.getOptions().setCssEnabled(false);//禁用CSS
+        wc.getOptions().setThrowExceptionOnScriptError(false);//js运行错误时，是否抛出异常
+        wc.getOptions().setThrowExceptionOnFailingStatusCode(false);//状态码错误时，是否抛出异常
+        wc.getOptions().setActiveXNative(false);//是否允许使用ActiveX
+        wc.waitForBackgroundJavaScript(600 * 1000);//等待js时间
+        wc.setAjaxController(new NicelyResynchronizingAjaxController());//设置Ajax异步处理控制器即启用Ajax支持
+        wc.getOptions().setTimeout(10000);//设置超时时间
+        wc.getOptions().setDoNotTrackEnabled(false);//不跟踪抓取
+        return wc;
+    }
+
     public static Document getDocument(String url) throws Exception {
         WebRequest request = new WebRequest(new URL(url));
 //        request.setAdditionalHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0");

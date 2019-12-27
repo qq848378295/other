@@ -40,7 +40,6 @@ public class T {
             System.out.println(file.getAbsolutePath());
             FileUtils.write(file,sb.toString(), Charset.forName("gbk"));
             MyRunTimeUtil.execCmdWithResult("cmd.exe /c start "+file.getAbsolutePath());
-
         } catch (IOException e) {
             e.printStackTrace();
         }
