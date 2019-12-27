@@ -48,7 +48,7 @@ public class HtmlUnitUtil {
         return wc;
     }
     public static WebClient getWc2(){
-        WebClient wc = new WebClient(BrowserVersion.CHROME);
+        WebClient wc = new WebClient(BrowserVersion.INTERNET_EXPLORER);
         wc.getOptions().setUseInsecureSSL(true);//是否使用不安全的SSL
         wc.getOptions().setJavaScriptEnabled(true);//启用JS解释器，默认为true
         wc.getOptions().setCssEnabled(false);//禁用CSS
