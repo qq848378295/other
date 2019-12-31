@@ -11,8 +11,7 @@ namespace ConsoleApp1
 
             /*
             Console.WriteLine(string.Format("接收到了{0}个参数", args.Length));
-            foreach (var item in args)
-            {
+            foreach (var item in args){
                 Console.WriteLine(item); 
             }
             Thread.Sleep(500);//睡眠500毫秒，也就是0.5秒 
