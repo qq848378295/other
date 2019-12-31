@@ -1,6 +1,7 @@
 /target/
 */target/
 */.suo
+*/.vs/*
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
