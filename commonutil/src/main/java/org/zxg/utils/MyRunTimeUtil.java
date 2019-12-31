@@ -56,8 +56,10 @@ public class MyRunTimeUtil {
             exec.setStreamHandler(streamHandler);
             exec.execute(commandline);
             //不同操作系统注意编码，否则结果乱码
-            String out = outputStream.toString("GBK");
-            String error = errorStream.toString("GBK");
+//            String out = outputStream.toString("GBK");
+//            String error = errorStream.toString("GBK");
+            String out = outputStream.toString("UTF8");
+            String error = errorStream.toString("UTF8");
             return out+error;
         } catch (Exception e) {
             e.printStackTrace();

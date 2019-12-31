@@ -1,5 +1,6 @@
 package org.zxg.utils;
 
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,7 +32,7 @@ public class HttpUtil {
      */
     private static String truncateUrlPage(String strURL) {
         String strAllParam = null;
-        strURL = strURL.trim().toLowerCase();
+        strURL = strURL.trim();//.toLowerCase();
         String[] arrSplit = strURL.split("[?]");
         if (strURL.length() > 1 && arrSplit.length > 1 && arrSplit[1] != null) {
             strAllParam = arrSplit[1];
@@ -41,6 +42,9 @@ public class HttpUtil {
 
     public static String getURLParam(String url,String attribute) {
         return getURLParam(url).get(attribute);
+    }
+    public static String getURLParam(URL url,String attribute) {
+        return getURLParam(url.toString()).get(attribute);
     }
     /**
      * 解析出url参数中的键值对
