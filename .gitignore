@@ -30,9 +30,9 @@
 /vs/**/bin/
 /vs/**/bin/**
 /vs/**/obj
-/vs/**/**/Server
-/vs/**/**/Debug
-
+*/Server
+*/Debug
+.suo
 
 # User-specific files
 *.suo
