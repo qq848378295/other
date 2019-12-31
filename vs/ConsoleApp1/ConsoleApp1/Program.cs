@@ -24,7 +24,8 @@ namespace ConsoleApp1
                 //a(item);
                 b(item);
             }
-          //  Console.Read(); //让控制台暂停,否则一闪而过了    
+            b(url);
+            Console.Read(); //让控制台暂停,否则一闪而过了    
 
 
         }
